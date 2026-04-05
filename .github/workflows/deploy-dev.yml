@@ -1,0 +1,49 @@
+name: Deploy DEV version
+
+on:
+  push:
+    branches:
+      - dev
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm install
+
+      - name: Build DEV
+        run: npm run build -- --base-href /pixie-angular-first-game/dev/
+
+      - name: Prepare DEV folder
+        run: |
+          mkdir deploy
+          cp -r dist/angular-pixi-app/browser/* deploy/
+          mkdir -p public/dev
+          cp -r deploy/* public/dev/
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+
+    steps:
+      - uses: actions/deploy-pages@v4
