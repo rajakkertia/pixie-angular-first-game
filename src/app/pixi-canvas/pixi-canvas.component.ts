@@ -60,7 +60,7 @@ export class PixiCanvasComponent implements AfterViewInit, OnDestroy {
   private readonly levels: LevelConfig[] = [
     {
       id: 1,
-      name: 'Easy Meadow',
+      name: 'Easy',
       worldSpeed: 4,
       spawnInterval: 100,
       obstacleChanceForTall: 0.3,
@@ -68,7 +68,7 @@ export class PixiCanvasComponent implements AfterViewInit, OnDestroy {
     },
     {
       id: 2,
-      name: 'Forest Run',
+      name: 'Medium',
       worldSpeed: 6,
       spawnInterval: 80,
       obstacleChanceForTall: 0.5,
@@ -76,7 +76,7 @@ export class PixiCanvasComponent implements AfterViewInit, OnDestroy {
     },
     {
       id: 3,
-      name: 'Hard Trail',
+      name: 'Hard',
       worldSpeed: 8,
       spawnInterval: 65,
       obstacleChanceForTall: 0.7,
