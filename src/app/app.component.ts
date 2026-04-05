@@ -10,5 +10,5 @@ import { PixiCanvasComponent } from './pixi-canvas/pixi-canvas.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'Run Forest Run';
+  title = 'Angular Pixi App';
 }
