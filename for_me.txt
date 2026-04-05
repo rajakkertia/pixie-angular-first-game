@@ -1,0 +1,5 @@
+build for github pages
+
+npm install -D angular-cli-ghpages
+MSYS_NO_PATHCONV=1 ng build --base-href /pixie-angular-first-game/
+npx angular-cli-ghpages --dir=dist/angular-pixi-app/browser
